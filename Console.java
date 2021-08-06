@@ -2,6 +2,8 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.awt.Graphics;
 
 import javax.swing.ImageIcon;
@@ -22,16 +24,26 @@ public class C_J_S_Console extends JFrame
     private JButton resume = new JButton("Resume");
     private JButton start = new JButton("Start");
     private JButton pause = new JButton("Pause");
+    private JFrame panSim =new JFrame("CJS Console For Pandemic");
   //  Image img = Toolkit.getDefaultToolkit().getImage("/Users/claytonforbes/Documents/TestPhoto/Co");//this is for the mac
     JLabel L1;
     
     
     public C_J_S_Console() {
-        super("CJS Console For Pandemic");
+       // super("CJS Console For Pandemic");
          this .setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          this.setLayout(new GridLayout(5,3));//3,1,10,10
             this.setSize(1100, 600);
             this.setLocationRelativeTo(null);
+            panSim.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            start.addActionListener(new ActionListener() {
+            	public void actionPerformed(ActionEvent ae) {
+            		panSim.dispose();
+            		new C_J_S_Person();
+            	}
+            	
+            });
+    	
             
             
             
@@ -39,7 +51,7 @@ public class C_J_S_Console extends JFrame
         this.setLayout(new FlowLayout());
         L1 = new JLabel();
         add(L1);
-        setSize(500, 300);
+        panSim.setSize(500, 300);
         
          
             
@@ -77,6 +89,9 @@ public class C_J_S_Console extends JFrame
             panel7.add(resume);
             JPanel panel8 = new JPanel(new FlowLayout());
             panel7.add(start);
+            
+            
+            
             JPanel panel9 = new JPanel(new FlowLayout());
             panel7.add(pause);
             
