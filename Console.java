@@ -48,6 +48,7 @@ public class C_J_S_Console extends JFrame
             
             
         this.setContentPane(new JLabel(new ImageIcon("C:\\Users\\101cl\\OneDrive\\Desktop\\Convid\\Pcovid.jpg")));//windows
+       // this.setContentPane(new JLabel(new ImageIcon("//Users//claytonforbes/Documents//TestPhoto//Covid.jpg")));//mac users to get photos
         this.setLayout(new FlowLayout());
         L1 = new JLabel();
         add(L1);
