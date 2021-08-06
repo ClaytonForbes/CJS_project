@@ -33,7 +33,7 @@ public class C_J_S_Console extends JFrame
        // super("CJS Console For Pandemic");
          this .setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          this.setLayout(new GridLayout(5,3));//3,1,10,10
-            this.setSize(900, 900);
+            this.setSize(600, 300);
             this.setLocationRelativeTo(null);
             panSim.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             start.addActionListener(new ActionListener() {
