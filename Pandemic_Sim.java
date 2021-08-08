@@ -1,4 +1,6 @@
-
+//Pandemic Project
+//Group members:Clayton,Josh,Sully
+//
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.*;
@@ -16,37 +18,52 @@ public class Pandemic_Sim extends JFrame{
 	JButton startBtn, stopBtn, resumeBtn;
 	JMenuBar mb;
 	JMenu members;
-	JMenuItem m1, m2, m3;
+	JMenu about;
+	JMenuItem m1, m2, m3,a1,a2,a3;
+	
 	String [] popSizes = {"200", "400", "600", "800", "1000"};
 	String [] percents = {"0", "25", "50", "75", "100"};
 	//ArrayList<Person> persons = new ArrayList<Person>();
 	int popSize, uVacPr, oneShotPr, twoShotPr, naturalPr;
 	
 	public Pandemic_Sim() {
-		super("Pandemic");
-		setSize(660, 350);			//suggested size
+		super("CJS.CO Pandemic Console");
+		setSize(660, 450);			//suggested size
 		setLocationRelativeTo(null); 	
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLayout(new BorderLayout());
+		 this.setContentPane(new JLabel(new ImageIcon("//Users//claytonforbes/Documents//TestPhoto//Covid.jpg")));//mac users to get photos
+		 this.setLayout(new FlowLayout());
+		
 		
 		
 		mb = new JMenuBar();
-		members = new JMenu("Group Members");
-		m1 = new JMenuItem("Suleyman");
-	    m2 = new JMenuItem("Josh");
-	    m3 = new JMenuItem("Clayton");
+		members = new JMenu("CJS.CO Coders Members");
+		m1 = new JMenuItem("Name/Student#:Suleyman-######");
+	    m2 = new JMenuItem("Name/Student#:Josh-######");
+	    m3 = new JMenuItem("Name/Studnet#:Clayton-0895827");
 	
 	    members.add(m1);
 	    members.add(m2);
 	    members.add(m3);
+	     
+	     about = new JMenu("Coder Section");
+	    a1= new JMenu("Clayton is from Section 2 ");
+	    a2= new JMenu("Josh is from Section 2 ");
+	    a3= new JMenu("Sully is from Section 3 ");
+	    about.add(a1);
+	    about.add(a2);
+	    about.add(a3);
 	    
 	    
 	    startBtn = new JButton("Start");
 	    stopBtn = new JButton("Stop");
 	    resumeBtn = new JButton("Resume");
+	   // f about = new JMenu("")
 	    
 	
 	    mb.add(members);
+	    mb.add(about);
 	    mb.add(startBtn);
 	    mb.add(stopBtn);
 	    mb.add(resumeBtn);
@@ -162,18 +179,23 @@ public class Pandemic_Sim extends JFrame{
                 twoShotPr = Integer.parseInt(percents[twoShotCb.getSelectedIndex()]);
                 naturalPr = Integer.parseInt(percents[naturalCb.getSelectedIndex()]);
 
+                //this.ContentPane(new JLabel(new ImageIcon("//Users//claytonforbes/Documents//TestPhoto//Covid.jpg")));//mac users to get photos
+         		 //this.setLayout(new FlowLayout());
 
 
-
-                JFrame frame = new JFrame ("SIM");
+                JFrame frame = new JFrame ("CJS Simulation  of Covid ");
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.setLayout(new FlowLayout());
                 frame.setSize(100,1000);
                 frame.add(new C_J_S_PandemicProject(popSize, uVacPr, oneShotPr, twoShotPr, naturalPr));
                 frame.getContentPane().setBackground(Color.BLUE);
+               // this.setContentPane(new JLabel(new ImageIcon("//Users//claytonforbes/Documents//TestPhoto//Covid.jpg")));//mac users to get photos
+         		 //this.setLayout(new FlowLayout());
                 frame.pack();
                 frame.setVisible(true);
+                
             }
+            
 
         });
 	    this.setVisible(true);
